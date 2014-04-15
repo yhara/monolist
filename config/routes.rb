@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  root 'top#index'
+
   resources :folders
 
   resources :items
-
-  get "/" => redirect('/folders/1')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
