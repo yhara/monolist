@@ -1,2 +1,34 @@
-h1 Top#index
-p Find me in app/views/top/index.html.slim
+= render 'folders/breadcrumbs', folder: @folder
+
+p#notice = notice
+
+- if @new_folder.errors.any?
+  #error_explanation
+    h2 = "#{pluralize(@new_folder.errors.count, "error")} prohibited this folder from being saved:"
+    ul
+      - @new_folder.errors.full_messages.each do |message|
+        li = message
+
+ul.children
+  - if @folder.parent
+    li
+      = link_to '..', @folder.parent
+
+  - @folder.children.each do |child|
+    li
+      = link_to child.name, child
+  
+  li
+    = form_for @new_folder do |f|
+      = f.hidden_field :parent_id
+      = f.text_field :name
+      = f.submit 'Add folder'
+
+h3 Recently updated items
+
+ul
+  - Item.order(updated_at: :desc).limit(10).each do |item|
+    li
+      = link_to item.name, item
+
+

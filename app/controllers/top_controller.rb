@@ -1,5 +1,6 @@
 class TopController < ApplicationController
   def index
-    redirect_to '/folders/1'
+    @folder = Folder.root
+    @new_folder = Folder.new(parent: @folder)
   end
 end
