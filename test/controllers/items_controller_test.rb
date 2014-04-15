@@ -21,7 +21,7 @@ class ItemsControllerTest < ActionController::TestCase
       post :create, item: { folder_id: @item.folder_id, name: @item.name, note: @item.note }
     end
 
-    assert_redirected_to item_path(assigns(:item))
+    assert_redirected_to folder_path(assigns(:item).folder)
   end
 
   test "should show item" do

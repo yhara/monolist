@@ -11,6 +11,7 @@ class FoldersController < ApplicationController
   # GET /folders/1.json
   def show
     @new_folder = Folder.new(parent: @folder)
+    @new_item = Item.new(folder: @folder)
   end
 
   # GET /folders/new

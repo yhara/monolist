@@ -24,6 +24,17 @@ ul.children
       = f.text_field :name
       = f.submit 'Add folder'
 
+ul.items
+  - @folder.items.each do |item|
+    li
+      = link_to item.name, item
+  
+  li
+    = form_for @new_item do |f|
+      = f.hidden_field :folder_id
+      = f.text_field :name
+      = f.submit 'Add item'
+
 - unless @folder.root?
   = link_to 'Edit', edit_folder_path(@folder)
   '  |

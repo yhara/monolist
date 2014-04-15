@@ -1,4 +1,6 @@
 class Folder < ActiveRecord::Base
+  has_many :items
+
   has_ancestry
 
   def self.root
