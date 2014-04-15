@@ -10,6 +10,7 @@ class FoldersController < ApplicationController
   # GET /folders/1
   # GET /folders/1.json
   def show
+    @new_folder = Folder.new(parent: @folder)
   end
 
   # GET /folders/new
@@ -29,7 +30,7 @@ class FoldersController < ApplicationController
 
     respond_to do |format|
       if @folder.save
-        format.html { redirect_to @folder, notice: 'Folder was successfully created.' }
+        format.html { redirect_to @folder.parent, notice: 'Folder was successfully created.' }
         format.json { render :show, status: :created, location: @folder }
       else
         format.html { render :new }

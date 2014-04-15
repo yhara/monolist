@@ -2,6 +2,13 @@
 
 p#notice = notice
 
+- if @new_folder.errors.any?
+  #error_explanation
+    h2 = "#{pluralize(@new_folder.errors.count, "error")} prohibited this folder from being saved:"
+    ul
+      - @new_folder.errors.full_messages.each do |message|
+        li = message
+
 ul.children
   - if @folder.parent
     li
@@ -12,7 +19,10 @@ ul.children
       = link_to child.name, child
   
   li
-    = link_to 'Add Folder...', new_folder_path(parent_id: @folder.id)
+    = form_for @new_folder do |f|
+      = f.hidden_field :parent_id
+      = f.text_field :name
+      = f.submit 'Add folder'
 
 - unless @folder.root?
   = link_to 'Edit', edit_folder_path(@folder)

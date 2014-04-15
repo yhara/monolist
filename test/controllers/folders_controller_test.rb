@@ -18,10 +18,10 @@ class FoldersControllerTest < ActionController::TestCase
 
   test "should create folder" do
     assert_difference('Folder.count') do
-      post :create, folder: { name: @folder.name }
+      post :create, folder: { parent_id: @folder.parent, name: @folder.name }
     end
 
-    assert_redirected_to folder_path(assigns(:folder))
+    assert_redirected_to folder_path(assigns(:folder).parent)
   end
 
   test "should show folder" do
