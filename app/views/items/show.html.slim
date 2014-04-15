@@ -1,15 +1,25 @@
 p#notice = notice
 
-p
-  strong Folder:
-  = @item.folder_id
+= render 'folders/breadcrumbs', folder: @item.folder
+
 p
   strong Name:
   = @item.name
+
+- if @item.added_on
+  p
+    strong Added:
+    = @item.added_on
+
+- if @item.removed_on
+  p
+    strong Removed:
+    = @item.removed_on
+
 p
   strong Note:
   = @item.note
 
 = link_to 'Edit', edit_item_path(@item)
 '|
-= link_to 'Back', items_path
+= link_to 'Back', folder_path(@item.folder)

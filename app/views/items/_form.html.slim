@@ -7,11 +7,14 @@
           li = message
 
   .field
-    = f.label :folder_id
-    = f.number_field :folder_id
-  .field
     = f.label :name
     = f.text_field :name
+  .field
+    = f.label :added_on
+    = f.text_field :added_on
+  .field
+    = f.label :removed_on
+    = f.text_field :removed_on
   .field
     = f.label :note
     = f.text_area :note

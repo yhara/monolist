@@ -1,5 +1,5 @@
 
-= render 'breadcrumbs'
+= render 'breadcrumbs', folder: @folder
 
 = form_for @folder do |f|
   - if @folder.errors.any?

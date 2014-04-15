@@ -69,6 +69,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:folder_id, :name, :note)
+      params.require(:item).permit(:folder_id, :name, :note,
+                                   :added_on, :removed_on)
     end
 end
