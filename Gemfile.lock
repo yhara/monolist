@@ -27,6 +27,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ancestry (2.0.0)
+      activerecord (>= 3.0.0)
     arel (5.0.0)
     awesome_print (1.2.0)
     builder (3.2.2)
@@ -136,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   awesome_print
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
