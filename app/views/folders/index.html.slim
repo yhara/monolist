@@ -1,0 +1,23 @@
+h1 Listing folders
+
+table
+  thead
+    tr
+      th Ancestry
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @folders.each do |folder|
+      tr
+        td = folder.ancestry
+        td = folder.name
+        td = link_to 'Show', folder
+        td = link_to 'Edit', edit_folder_path(folder)
+        td = link_to 'Destroy', folder, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Folder', new_folder_path

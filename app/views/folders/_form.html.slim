@@ -1,0 +1,15 @@
+= form_for @folder do |f|
+  - if @folder.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@folder.errors.count, "error")} prohibited this folder from being saved:"
+      ul
+        - @folder.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :ancestry
+    = f.text_field :ancestry
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions = f.submit 'Save'
