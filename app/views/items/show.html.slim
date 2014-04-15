@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Folder:
+  = @item.folder_id
+p
+  strong Name:
+  = @item.name
+p
+  strong Note:
+  = @item.note
+
+= link_to 'Edit', edit_item_path(@item)
+'|
+= link_to 'Back', items_path
