@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415023051) do
+ActiveRecord::Schema.define(version: 20140415082105) do
 
   create_table "folders", force: true do |t|
     t.string   "ancestry"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20140415023051) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "added_on"
+    t.date     "removed_on"
   end
 
   create_table "photos", force: true do |t|
