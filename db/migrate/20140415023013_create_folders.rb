@@ -6,5 +6,6 @@ class CreateFolders < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :folders, :ancestry
   end
 end
