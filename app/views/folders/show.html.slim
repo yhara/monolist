@@ -1,16 +1,19 @@
+= render 'breadcrumbs'
+
 p#notice = notice
 
-p
-  strong Ancestry:
-  = @folder.ancestry
-p
-  strong Name:
-  = @folder.name
-p
-  strong Children:
-  
-  = link_to 'New Folder', new_folder_path
+ul.children
+  - if @folder.parent
+    li
+      = link_to '..', @folder.parent
 
-//= link_to 'Edit', edit_folder_path(@folder)
-//'|
-//= link_to 'Back', folders_path
+  - @folder.children.each do |child|
+    li
+      = link_to child.name, child
+  
+  li
+    = link_to 'Add Folder...', new_folder_path(parent_id: @folder.id)
+
+= link_to 'Edit', edit_folder_path(@folder)
+'|
+= link_to 'Destroy', @folder, data: {:confirm => 'Are you sure?'}, :method => :delete

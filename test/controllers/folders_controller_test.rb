@@ -12,7 +12,7 @@ class FoldersControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, parent_id: Folder.root.id
     assert_response :success
   end
 

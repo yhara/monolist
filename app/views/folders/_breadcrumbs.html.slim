@@ -1,0 +1,8 @@
+.breadcrumbs
+  - @folder.ancestors.each do |folder|
+    '  /
+    = link_to folder.name, folder
+  - unless @folder.new_record?
+    '  /
+    = link_to @folder.name, @folder
+

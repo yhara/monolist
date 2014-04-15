@@ -1,3 +1,6 @@
+
+= render 'breadcrumbs'
+
 = form_for @folder do |f|
   - if @folder.errors.any?
     #error_explanation
@@ -6,9 +9,7 @@
         - @folder.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :ancestry
-    = f.text_field :ancestry
+  = f.hidden_field :parent_id
   .field
     = f.label :name
     = f.text_field :name

@@ -14,7 +14,8 @@ class FoldersController < ApplicationController
 
   # GET /folders/new
   def new
-    @folder = Folder.new
+    parent = Folder.find(params[:parent_id])
+    @folder = Folder.new(parent: parent)
   end
 
   # GET /folders/1/edit
@@ -69,6 +70,6 @@ class FoldersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def folder_params
-      params.require(:folder).permit(:name)
+      params.require(:folder).permit(:name, :parent_id)
     end
 end

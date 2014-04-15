@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Folder.create(name: '') unless Folder.find_by(name: '')
+Folder.create(name: 'root') if Folder.count == 0
