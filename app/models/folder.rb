@@ -10,4 +10,8 @@ class Folder < ActiveRecord::Base
   def root?
     parent_id.nil?
   end
+
+  def vname
+    "@#{name}"
+  end
 end

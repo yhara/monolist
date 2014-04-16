@@ -16,7 +16,7 @@ ul.children
 
   - @folder.children.each do |child|
     li
-      = link_to child.name, child
+      = link_to child.vname, child
   
   li
     = form_for @new_folder do |f|

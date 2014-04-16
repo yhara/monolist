@@ -1,9 +1,9 @@
 .breadcrumbs
   - folder.ancestors.drop(1).each do |ancestor|
     '  /
-    = link_to ancestor.name, ancestor
+    = link_to ancestor.vname, ancestor
   - if folder.persisted?
     '  /
     - unless folder.root?
-      = link_to folder.name, folder
+      = link_to folder.vname, folder
 
