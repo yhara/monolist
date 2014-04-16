@@ -15,7 +15,14 @@
   .field
     = f.label :removed_on
     = f.text_field :removed_on
+  - if @item.photos.any?
+    .field
+      = f.label :photos
+      - @item.photos.each do |photo|
+        .photo
+          img src=(photo.body.url)
+          = link_to 'Destroy', photo, data: {:confirm => 'Are you sure?'}, :method => :delete
   .field
     = f.label :note
-    = f.text_area :note
+    = f.text_area :note, cols: 80, rows: 15
   .actions = f.submit 'Save'

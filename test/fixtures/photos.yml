@@ -2,8 +2,6 @@
 
 one:
   item_id: 1
-  filepath: MyString
 
 two:
-  item_id: 1
-  filepath: MyString
+  item_id: 2

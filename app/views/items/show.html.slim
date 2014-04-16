@@ -16,10 +16,18 @@ p
     strong Removed:
     = @item.removed_on
 
+- if @item.photos.any?
+  p
+    strong Photos:
+    - @item.photos.each do |photo|
+      img src=(photo.body.url)
+
 p
   strong Note:
   = @item.note
 
+= link_to 'Add photo', new_photo_path(item_id: @item.id)
+' |
 = link_to 'Edit', edit_item_path(@item)
-'|
+' |
 = link_to 'Back', folder_path(@item.folder)

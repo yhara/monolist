@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :photos
+
   root 'top#index'
 
   resources :folders
