@@ -3,6 +3,8 @@ require 'test_helper'
 class ItemsControllerTest < ActionController::TestCase
   setup do
     @item = items(:one)
+    # FIXME: use FactoryGirl for testing Photos 
+    @item.photos = []
   end
 
   test "should get index" do
@@ -44,6 +46,6 @@ class ItemsControllerTest < ActionController::TestCase
       delete :destroy, id: @item
     end
 
-    assert_redirected_to items_path
+    assert_redirected_to folder_path(@item.folder)
   end
 end

@@ -59,7 +59,7 @@ class FoldersController < ApplicationController
   def destroy
     @folder.destroy
     respond_to do |format|
-      format.html { redirect_to folders_url }
+      format.html { redirect_to folder_url(@folder.parent) }
       format.json { head :no_content }
     end
   end

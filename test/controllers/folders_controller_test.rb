@@ -44,6 +44,6 @@ class FoldersControllerTest < ActionController::TestCase
       delete :destroy, id: @folder
     end
 
-    assert_redirected_to folders_path
+    assert_redirected_to folder_path(@folder.parent)
   end
 end

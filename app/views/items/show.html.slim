@@ -21,7 +21,7 @@ p
     strong Photos:
     - @item.photos.each do |photo|
       a href=(photo.body.url)
-        img src=(photo.body.s_300_300)
+        img src=(photo.body.s_200_200 convert_options: "-auto-orient")
 
 p
   strong Note:
@@ -30,5 +30,7 @@ p
 = link_to 'Add photo', new_photo_path(item_id: @item.id)
 ' |
 = link_to 'Edit', edit_item_path(@item)
+' |
+= link_to 'Destroy', @item, data: {:confirm => 'Are you sure?'}, :method => :delete
 ' |
 = link_to 'Back', folder_path(@item.folder)
