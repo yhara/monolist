@@ -9,19 +9,24 @@
   .field
     = f.label :name
     = f.text_field :name
+
   .field
     = f.label :added_on
     = f.text_field :added_on
+
   .field
     = f.label :removed_on
     = f.text_field :removed_on
+
   - if @item.photos.any?
     .field
       = f.label :photos
       - @item.photos.each do |photo|
         .photo
-          img src=(photo.body.url)
+          a href=(photo.body.url)
+            img src=(photo.body.s_300_300)
           = link_to 'Destroy', photo, data: {:confirm => 'Are you sure?'}, :method => :delete
+
   .field
     = f.label :note
     = f.text_area :note, cols: 80, rows: 15

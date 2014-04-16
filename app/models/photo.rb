@@ -1,3 +1,5 @@
+require 'attachment_on_the_fly'
+
 class Photo < ActiveRecord::Base
   belongs_to :item
 

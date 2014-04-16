@@ -20,11 +20,12 @@ p
   p
     strong Photos:
     - @item.photos.each do |photo|
-      img src=(photo.body.url)
+      a href=(photo.body.url)
+        img src=(photo.body.s_300_300)
 
 p
   strong Note:
-  = @item.note
+  pre= @item.note
 
 = link_to 'Add photo', new_photo_path(item_id: @item.id)
 ' |
