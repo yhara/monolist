@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415082105) do
+ActiveRecord::Schema.define(version: 20140416050143) do
 
   create_table "folders", force: true do |t|
     t.string   "ancestry"
@@ -34,9 +34,10 @@ ActiveRecord::Schema.define(version: 20140415082105) do
 
   create_table "photos", force: true do |t|
     t.integer  "item_id"
-    t.string   "filepath"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "body_file_name"
+    t.string   "body_content_type"
+    t.integer  "body_file_size"
+    t.datetime "body_updated_at"
   end
 
 end

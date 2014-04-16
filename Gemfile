@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Model
 gem 'ancestry'
+gem "paperclip", "~> 4.1"
 
 gem 'rails', '4.1.0'
 gem 'sqlite3'
