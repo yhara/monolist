@@ -14,4 +14,13 @@ class Folder < ActiveRecord::Base
   def vname
     "@#{name}"
   end
+
+  def n_items
+    if root?
+      Item.where(removed_on: nil).count
+    else
+      ids = [self.id] + descendant_ids
+      Item.where(removed_on: nil, folder_id: ids).count
+    end
+  end
 end

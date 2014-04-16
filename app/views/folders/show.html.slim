@@ -1,39 +1,4 @@
-= render 'breadcrumbs', folder: @folder
-
-p#notice = notice
-
-- if @new_folder.errors.any?
-  #error_explanation
-    h2 = "#{pluralize(@new_folder.errors.count, "error")} prohibited this folder from being saved:"
-    ul
-      - @new_folder.errors.full_messages.each do |message|
-        li = message
-
-ul.children
-  - if @folder.parent
-    li
-      = link_to '..', @folder.parent
-
-  - @folder.children.each do |child|
-    li
-      = link_to child.vname, child
-  
-  li
-    = form_for @new_folder do |f|
-      = f.hidden_field :parent_id
-      = f.text_field :name
-      = f.submit 'Add folder'
-
-ul.items
-  - @folder.items.each do |item|
-    li
-      = link_to item.name, item
-  
-  li
-    = form_for @new_item do |f|
-      = f.hidden_field :folder_id
-      = f.text_field :name
-      = f.submit 'Add item'
+= render 'folders/folder_ctrl'
 
 = link_to 'Edit', edit_folder_path(@folder)
 '  |
