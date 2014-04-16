@@ -4,18 +4,6 @@ class FoldersControllerTest < ActionController::TestCase
   setup do
     @folder = folders(:one)
   end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:folders)
-  end
-
-  test "should get new" do
-    get :new, parent_id: Folder.root.id
-    assert_response :success
-  end
-
   test "should create folder" do
     assert_difference('Folder.count') do
       post :create, folder: { parent_id: @folder.parent, name: @folder.name }

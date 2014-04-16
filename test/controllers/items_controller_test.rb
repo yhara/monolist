@@ -7,17 +7,6 @@ class ItemsControllerTest < ActionController::TestCase
     @item.photos = []
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:items)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create item" do
     assert_difference('Item.count') do
       post :create, item: { folder_id: @item.folder_id, name: @item.name, note: @item.note }

@@ -1,23 +1,11 @@
 class FoldersController < ApplicationController
   before_action :set_folder, only: [:show, :edit, :update, :destroy]
 
-  # GET /folders
-  # GET /folders.json
-  def index
-    @folders = Folder.all
-  end
-
   # GET /folders/1
   # GET /folders/1.json
   def show
     @new_folder = Folder.new(parent: @folder)
     @new_item = Item.new(folder: @folder)
-  end
-
-  # GET /folders/new
-  def new
-    parent = Folder.find(params[:parent_id])
-    @folder = Folder.new(parent: parent)
   end
 
   # GET /folders/1/edit
