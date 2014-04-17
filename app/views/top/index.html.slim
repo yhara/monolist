@@ -3,8 +3,13 @@
 h3 Recently updated items
 
 ul
-  - Item.order(updated_at: :desc).limit(10).each do |item|
+  - Item.order(updated_at: :desc).limit(10).each do |x|
     li
-      = link_to item.name, item
+      = link_to x.name, x
 
+h3 Items without note
 
+ul
+  - Item.where(note: nil).limit(10).each do |x|
+    li
+      = link_to x.name, x

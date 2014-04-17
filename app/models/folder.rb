@@ -4,8 +4,14 @@ class Folder < ActiveRecord::Base
   has_ancestry
 
   def self.root
-    Folder.first
+    Folder.roots.first
   end
+
+#  scope :empties, ->{ 
+#    joins('LEFT OUTER JOIN items ON items.folder_id = folders.id')
+#    .where('items.id IS NULL')
+#    .where('folders.id != ?', Folder.root.id)
+#  }
 
   def root?
     parent_id.nil?
