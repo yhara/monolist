@@ -22,6 +22,7 @@ ul.children
   li
     = form_for @new_folder do |f|
       = f.hidden_field :parent_id
+      ' @
       = f.text_field :name
       = f.submit 'Add folder'
 
