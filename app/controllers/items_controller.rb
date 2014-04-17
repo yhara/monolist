@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
+        flash[:item_created] = true
         format.html { redirect_to @item.folder, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else

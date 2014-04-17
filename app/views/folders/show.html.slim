@@ -3,3 +3,9 @@
 = link_to 'Edit', edit_folder_path(@folder)
 '  |
 = link_to 'Destroy', @folder, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+- if flash[:item_created]
+  coffee:
+    $ ->
+      $('#item_name').focus()
+
