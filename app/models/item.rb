@@ -3,4 +3,8 @@ class Item < ActiveRecord::Base
   has_many :photos
 
   validates_presence_of :folder
+
+  def has_note?
+    note && !note.empty?
+  end
 end

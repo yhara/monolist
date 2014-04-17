@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    note_with_date = "#{Date.today}\n"
+    note_with_date << "\n--\n#{@item.note}" if @item.has_note?
+
+    @item.note = note_with_date
   end
 
   # POST /items
