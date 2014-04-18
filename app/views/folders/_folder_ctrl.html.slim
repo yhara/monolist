@@ -37,6 +37,7 @@ ul.children
         = link_to item.name, item
         - if item.has_note?
           ' ...
+        = render '_shared/tags', tags: item.tags
     
     li
       = form_for @new_item do |f|

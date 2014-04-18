@@ -6,4 +6,4 @@
     '  /
     - unless folder.root?
       = link_to folder.vname, folder
-
+      = render '_shared/tags', tags: folder.tags

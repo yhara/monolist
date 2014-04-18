@@ -2,6 +2,7 @@ class Folder < ActiveRecord::Base
   has_many :items
 
   has_ancestry
+  acts_as_taggable
 
   def self.root
     Folder.roots.first
