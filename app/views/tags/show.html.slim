@@ -1,5 +1,5 @@
 h2
-  ' Tag
+  ' Tagged with
   = render '_shared/tags', tags: [@tag]
 
 h3 Folders
@@ -7,11 +7,11 @@ h3 Folders
 ul
   - Folder.tagged_with(@tag).each do |x|
     li
-      = link_to x.name, x
+      = render 'folders/with_path', folder: x
 
 h3 Items
 
 ul
   - Item.tagged_with(@tag).each do |x|
     li
-      = link_to x.name, x
+      = render 'items/with_path', item: x

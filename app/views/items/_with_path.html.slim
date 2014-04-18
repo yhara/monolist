@@ -1,0 +1,8 @@
+.item_with_path
+  - (item.folder.ancestors.drop(1) + [item.folder]).each do |ancestor|
+    | /
+    = link_to ancestor.vname, ancestor
+  | /
+  = link_to item.name, item
+
+

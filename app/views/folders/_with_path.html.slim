@@ -1,0 +1,4 @@
+.folder_with_path
+  - (folder.ancestors.drop(1) + [folder]).each do |ancestor|
+    | /
+    = link_to ancestor.vname, ancestor
