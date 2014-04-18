@@ -27,6 +27,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.1.1)
+      actionpack (>= 3, < 5)
+      activerecord (>= 3, < 5)
+      activesupport (>= 3, < 5)
     ancestry (2.0.0)
       activerecord (>= 3.0.0)
     arel (5.0.0)
@@ -149,6 +153,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   ancestry
   attachment_on_the_fly
   awesome_print

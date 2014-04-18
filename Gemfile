@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'ancestry'
 gem "paperclip", "~> 4.1"
 gem 'attachment_on_the_fly'
+gem 'acts-as-taggable-on'
 
 gem 'rails', '4.1.0'
 gem 'sqlite3'
