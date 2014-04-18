@@ -21,6 +21,7 @@ ul.children
     li
       = link_to child.vname, child
       = "(#{child.n_items})"
+      = render '_shared/tags', tags: child.tags
   
   li
     = form_for @new_folder do |f|
