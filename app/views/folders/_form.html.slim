@@ -9,7 +9,9 @@
         - @folder.errors.full_messages.each do |message|
           li = message
 
-  = f.hidden_field :parent_id
+  .field
+    = f.label :parent_id
+    = f.text_field :parent_id
   .field
     = f.label :name
     = f.text_field :name
