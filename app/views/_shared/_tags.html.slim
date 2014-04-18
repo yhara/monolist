@@ -1,4 +1,4 @@
 span.tags
   - tags.each do |tag|
     span.tag
-      = tag.name
+      = link_to tag.name, tag_path(tag)

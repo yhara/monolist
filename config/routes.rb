@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags, only: [:show]
+
   resources :photos
 
   root 'top#index'
