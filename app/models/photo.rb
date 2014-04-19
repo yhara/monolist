@@ -1,7 +1,7 @@
 require 'attachment_on_the_fly'
 
 class Photo < ActiveRecord::Base
-  belongs_to :item
+  belongs_to :item, touch: true
 
   has_attached_file :body
   validates_attachment_presence :body

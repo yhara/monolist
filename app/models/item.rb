@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  belongs_to :folder
+  belongs_to :folder, touch: true
   has_many :photos
 
   acts_as_taggable
