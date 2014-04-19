@@ -22,7 +22,7 @@ class Folder < ActiveRecord::Base
     "@#{name}"
   end
 
-  def n_items
+  def n_active_items
     if root?
       Item.where(removed_on: nil).count
     else

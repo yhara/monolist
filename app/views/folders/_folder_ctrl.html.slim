@@ -20,7 +20,7 @@ ul.children
   - @folder.children.each do |child|
     li
       = link_to child.vname, child
-      = "(#{child.n_items})"
+      = "(#{child.n_active_items})"
       = render '_shared/tags', tags: child.tags
   
   // Create child folder
