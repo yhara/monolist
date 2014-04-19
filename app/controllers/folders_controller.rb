@@ -6,6 +6,7 @@ class FoldersController < ApplicationController
   def show
     @new_folder = Folder.new(parent: @folder)
     @new_item = Item.new(folder: @folder)
+    @new_photo = Photo.new(item_id: nil)
   end
 
   # GET /folders/1/edit

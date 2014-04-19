@@ -23,6 +23,7 @@ ul.children
       = "(#{child.n_items})"
       = render '_shared/tags', tags: child.tags
   
+  // Create child folder
   li
     = form_for @new_folder do |f|
       = f.hidden_field :parent_id
@@ -35,13 +36,21 @@ ul.children
   ul.items
     - @folder.items.each do |item|
       li
-        = link_to item.name, item
+        = link_to item.vname, item
         - if item.has_note?
           ' ...
         = render '_shared/tags', tags: item.tags
     
+    // Create item
     li
       = form_for @new_item do |f|
         = f.hidden_field :folder_id
         = f.text_field :name
         = f.submit 'Add item'
+
+    // Create item by photo
+    li
+      = form_for @new_photo do |f|
+        = hidden_field_tag :folder_id, @folder.id
+        = f.file_field :body
+        = f.submit 'Add item by photo'

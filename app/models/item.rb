@@ -9,4 +9,8 @@ class Item < ActiveRecord::Base
   def has_note?
     note && !note.empty?
   end
+
+  def vname
+    name || '(no name)'
+  end
 end

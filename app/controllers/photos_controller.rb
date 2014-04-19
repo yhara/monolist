@@ -10,6 +10,11 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
+    if @photo.item_id.nil?
+      folder = Folder.find(params[:folder_id])
+      item = Item.create!(folder: folder)
+      @photo.item_id = item.id
+    end
 
     respond_to do |format|
       if @photo.save
