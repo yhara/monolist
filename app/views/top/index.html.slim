@@ -10,11 +10,11 @@ h3 Recently updated items
 ul
   - Item.order(updated_at: :desc).limit(10).each do |x|
     li
-      = link_to x.name, x
+      = render 'items/with_path', item: x
 
 h3 Items without note
 
 ul
   - Item.where(note: nil).limit(10).each do |x|
     li
-      = link_to x.name, x
+      = render 'items/with_path', item: x
