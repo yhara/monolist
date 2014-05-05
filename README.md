@@ -29,6 +29,19 @@ Install
 
 Uploaded images are stored under ./public/system.
 
+Production
+----------
+
+    $ rake secret
+    (snip)
+    $ vi config/secrets.yml
+    # Add secret_key_base for production
+    $ vi config/initializers/monolist.rb
+    # Edit password to enable basic auth
+    $ bundle exec rake assets:precompile
+    or:
+    $ bundle exec rake assets:precompile RAILS_RELATIVE_URL_ROOT=/monolist
+
 License
 =======
 
