@@ -1,7 +1,7 @@
 MonoList
 ========
 
-Have too many stuffs in your house? Manage them with MonoList.
+Have too many things in your house? Manage them with MonoList.
 
 ![](http://gyazo.com/d69acf3db561a456422821c34c742da7.png)
 
@@ -26,6 +26,8 @@ Install
     $ bundle exec rake db:migrate
     $ bundle exec rails s
     $ open http://localhost:3000/
+
+Uploaded images are stored under ./public/system.
 
 License
 =======
