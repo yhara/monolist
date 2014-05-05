@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   if defined?(MonoList::BASIC_AUTH)
-    http_basic_authenticate_with BASIC_AUTH
+    http_basic_authenticate_with MonoList::BASIC_AUTH
   end
 end
