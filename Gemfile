@@ -6,6 +6,12 @@ gem "paperclip", "~> 4.1"
 gem 'attachment_on_the_fly'
 gem 'acts-as-taggable-on'
 
+# Deploy
+gem 'capistrano', '>= 3'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv'
+
 gem 'rails', '4.1.0'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
