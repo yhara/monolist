@@ -34,12 +34,24 @@ ul.children
 // Items in this folder
 - unless @folder.root?
   ul.items
-    - @folder.items.each do |item|
+    - actives, inactives = @folder.active_and_removed_items
+    - actives.each do |item|
       li
         = link_to item.vname, item
         - if item.has_note?
           ' ...
         = render '_shared/tags', tags: item.tags
+
+    - if inactives.any?
+      li
+        = link_to "[#{inactives.length} removed item(s)]", '#', id: 'open_inactives'
+        ul#inactives.hidden
+          - inactives.each do |item|
+            li
+              = link_to item.vname, item
+              - if item.has_note?
+                ' ...
+              = render '_shared/tags', tags: item.tags
     
     // Create item
     li
@@ -54,3 +66,8 @@ ul.children
         = hidden_field_tag :folder_id, @folder.id
         = f.file_field :body
         = f.submit 'Add item by photo'
+
+coffee:
+  $ ->
+    $('#open_inactives').click ->
+      $('#inactives').toggle()

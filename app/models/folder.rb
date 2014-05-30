@@ -22,6 +22,10 @@ class Folder < ActiveRecord::Base
     "@#{name}"
   end
 
+  def active_and_removed_items
+    items.partition{|x| x.removed_on.nil?}
+  end
+
   def n_active_items
     if root?
       Item.where(removed_on: nil).count
