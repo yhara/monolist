@@ -18,9 +18,10 @@ ul.children
       = link_to '..', @folder.parent
 
   - @folder.children.each do |child|
+    - na, nr = child.n_active_and_removed_items
     li
       = link_to child.vname, child
-      = "(#{child.n_active_items})"
+      = "(#{na}#{','+nr.to_s if nr > 0})"
       = render '_shared/tags', tags: child.tags
   
   // Create child folder

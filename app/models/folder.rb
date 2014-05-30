@@ -26,12 +26,14 @@ class Folder < ActiveRecord::Base
     items.partition{|x| x.removed_on.nil?}
   end
 
-  def n_active_items
+  def n_active_and_removed_items
     if root?
-      Item.where(removed_on: nil).count
+      [Item.where(removed_on: nil).count,
+       Item.where.not(removed_on: nil).count]
     else
       ids = [self.id] + descendant_ids
-      Item.where(removed_on: nil, folder_id: ids).count
+      [Item.where(folder_id: ids, removed_on: nil).count,
+       Item.where(folder_id: ids).where.not(removed_on: nil).count]
     end
   end
 end
