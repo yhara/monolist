@@ -3,7 +3,7 @@
 h3 Tags
 
 p
-  = render '_shared/tags', tags: ActsAsTaggableOn::Tag.all
+  = render '_shared/tags', tags: ActsAsTaggableOn::Tag.where.not(taggings_count: 0)
 
 h3 Recent photos
 
