@@ -4,6 +4,8 @@ class FoldersController < ApplicationController
   # GET /folders/1
   # GET /folders/1.json
   def show
+    session[:show_photo] = params[:show_photo] == 'true'
+
     @new_folder = Folder.new(parent: @folder)
     @new_item = Item.new(folder: @folder)
     @new_photo = Photo.new(item_id: nil)

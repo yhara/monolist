@@ -43,6 +43,10 @@ ul.children
           ' ...
         = render '_shared/tags', tags: item.tags
 
+        - if session[:show_photo]
+          - item.photos.each do |photo|
+            img src=(photo.src_for_preview)
+
     - if inactives.any?
       li
         = link_to "[#{inactives.length} removed item(s)]", '#', id: 'open_inactives'
@@ -67,6 +71,10 @@ ul.children
         = hidden_field_tag :folder_id, @folder.id
         = f.file_field :body
         = f.submit 'Add item by photo'
+
+p
+  - show = session[:show_photo]
+  = link_to "#{show ? 'Hide' : 'Show'} photo", folder_path(@folder, show_photo: !show)
 
 coffee:
   $ ->

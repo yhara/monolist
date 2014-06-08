@@ -9,7 +9,7 @@ h3 Recent photos
 
 - Photo.order(body_updated_at: :desc).limit(5).each do |photo|
   = link_to photo.item do
-    img src=(photo.body.s_200_200 convert_options: "-auto-orient")
+    img src=(photo.src_for_preview)
 
 h3 Recently updated items
 

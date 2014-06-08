@@ -22,7 +22,7 @@ p
     strong Photos:
     - @item.photos.each do |photo|
       a href=(photo.body.url)
-        img src=(photo.body.s_200_200 convert_options: "-auto-orient")
+        img src=(photo.src_for_preview)
 
 p
   strong Note:
