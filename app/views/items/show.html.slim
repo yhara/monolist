@@ -22,7 +22,7 @@ p
     strong Photos:
     - @item.photos.each do |photo|
       a href=(photo.body.url)
-        img src=(photo.src_for_preview)
+        = image_tag photo.body.url(:thumb)
 
 p
   strong Note:

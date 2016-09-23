@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 # Model
 gem 'ancestry'
-gem "paperclip", "~> 4.1"
-gem 'attachment_on_the_fly'
+gem "paperclip"
 gem 'acts-as-taggable-on'
 
 # Deploy

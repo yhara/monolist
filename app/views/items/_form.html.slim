@@ -28,7 +28,7 @@
       - @item.photos.each do |photo|
         .photo
           a href=(photo.body.url)
-            img src=(photo.src_for_preview)
+            = image_tag photo.body.url(:thumb)
           = link_to 'Destroy', photo, data: {:confirm => 'Are you sure?'}, :method => :delete
 
   .field

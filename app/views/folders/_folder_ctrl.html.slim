@@ -45,7 +45,7 @@ ul.children
 
         - if session[:show_photo]
           - item.photos.each do |photo|
-            img src=(photo.src_for_preview)
+            = image_tag photo.body.url(:thumb)
 
     - if inactives.any?
       li
