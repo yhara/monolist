@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 # Model
 gem 'ancestry'
-gem "paperclip", "~> 4.1"
-gem 'attachment_on_the_fly'
+gem "paperclip"
 gem 'acts-as-taggable-on'
 
 # Deploy
@@ -12,7 +11,7 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rbenv'
 
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.7.1'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
