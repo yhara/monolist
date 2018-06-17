@@ -15,7 +15,7 @@ Features
 Requirements
 ------------
 
-* May work with Ruby >= 1.9 (Ruby 2.x is preferred.)
+* Ruby (tested with 2.5.1)
 * Imagemagick (eg. `$ brew install imagemagick`)
 
 Install
@@ -38,6 +38,8 @@ Production
     # Add secret_key_base for production
     $ vi config/initializers/monolist.rb
     # Edit password to enable basic auth
+    $ vi config/application.rb
+    # Edit timezone (if you are not in JST)
     $ bundle exec rake assets:precompile
     or:
     $ bundle exec rake assets:precompile RAILS_RELATIVE_URL_ROOT=/monolist
@@ -46,8 +48,7 @@ License
 =======
 
 * MIT
-
-* public/favicon.ico is taken from http://www.famfamfam.com/lab/icons/silk/ (table.png)
+* public/favicon.ico: http://www.famfamfam.com/lab/icons/silk/ (table.png)
 
 Contact
 =======
