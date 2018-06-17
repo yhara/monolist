@@ -6,6 +6,10 @@ class Item < ActiveRecord::Base
 
   validates_presence_of :folder
 
+  before_create do
+    self.added_on ||= Time.zone.now.to_date
+  end
+
   def has_note?
     note && !note.empty?
   end
