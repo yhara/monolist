@@ -49,7 +49,7 @@ ul.children
 
     - if inactives.any?
       li
-        = link_to "[#{inactives.length} removed item(s)]", '#', id: 'open_inactives'
+        = link_to "[#{inactives.length} removed item(s)]", '#', id: 'open_inactives', data: {turbolinks: false}
         ul#inactives.hidden
           - inactives.each do |item|
             li
