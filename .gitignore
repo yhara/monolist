@@ -18,3 +18,8 @@
 /public/system
 
 /coverage
+
+/Capfile
+/config/deploy.rb
+/config/deploy/production.rb
+/.ruby-version
