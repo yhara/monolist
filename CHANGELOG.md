@@ -1,4 +1,6 @@
-# CHANGELOG
+## v1.0.2 (2019-08-29)
+
+- security: Update nokogiri
 
 ## v1.0.1 (2018-11-07)
 
