@@ -1,3 +1,7 @@
+## v1.0.3 (2019-08-29)
+
+- chores: Update bundler
+
 ## v1.0.2 (2019-08-29)
 
 - security: Update nokogiri
